@@ -1,0 +1,16 @@
+package com.example.job_service.requests.job;
+
+
+import lombok.Data;
+
+import jakarta.validation.constraints.NotBlank;
+
+@Data
+public class JobCreateRequest {
+    @NotBlank(message = "Job name is required")
+    private String name;
+    private String description;
+    @NotBlank(message = "Category id is required")
+    private String categoryId;
+    private String[] keys;
+}
