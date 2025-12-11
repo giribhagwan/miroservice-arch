@@ -2,6 +2,8 @@ package com.example.job_service.requests.advert;
 
 
 import com.example.job_service.enums.Advertiser;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Data;
 
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +18,8 @@ public class AdvertCreateRequest {
     private int deliveryTime;
     @NotNull(message = "Price is required")
     private int price;
-    @NotBlank(message = "Advertiser is required")
+    @NotNull(message = "Advertiser is required")
+    @Enumerated(EnumType.STRING)
     private Advertiser advertiser;
     @NotBlank(message = "User id is required")
     private String userId;

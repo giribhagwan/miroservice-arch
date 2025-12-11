@@ -16,6 +16,7 @@ public class GeneralExceptionHandler extends ResponseEntityExceptionHandler {
     public final ResponseEntity<?> handleAllException(Exception ex) {
         Map<String, String> errors = new HashMap<>();
         errors.put("error", ex.getMessage());
+        ex.printStackTrace();
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
